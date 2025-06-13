@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package user;
+
+// 사용자 서비스 정의
+service UserService {
+  // 사용자 정보 조회
+  rpc GetUser(UserRequest) returns (UserResponse);
+  // 사용자 생성
+  rpc CreateUser(CreateUserRequest) returns (UserResponse);
+}
+
+// 사용자 조회 요청
+message UserRequest {
+  int64 user_id = 1;
+}
+
+// 사용자 생성 요청
+message CreateUserRequest {
+  string username = 1;
+  string email = 2;
+}
+
+// 사용자 응답
+message UserResponse {
+  int64 user_id = 1;
+  string username = 2;
+  string email = 3;
+  string created_at = 4;
+} 

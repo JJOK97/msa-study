@@ -1,0 +1,25 @@
+server:
+    port: 8081 # HTTP 포트
+
+spring:
+    application:
+        name: user-service
+    datasource:
+        url: jdbc:h2:mem:userdb
+        driver-class-name: org.h2.Driver
+        username: sa
+        password:
+    h2:
+        console:
+            enabled: true
+
+# gRPC 서버 설정
+grpc:
+    server:
+        port: 50051 # gRPC 포트
+
+# 로깅 설정
+logging:
+    level:
+        com.example.user: DEBUG
+        io.grpc: INFO
